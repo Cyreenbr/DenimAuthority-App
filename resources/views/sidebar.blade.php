@@ -6,6 +6,7 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
+        @if(Auth::user()->user_type == '1')
           <li class="nav-item nav-category">Administrateur</li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
@@ -20,7 +21,9 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item nav-category">Forms and Datas</li>
+        @endif
+
+        <!--  <li class="nav-item nav-category">Forms and Datas</li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
               <i class="menu-icon mdi mdi-card-text-outline"></i>
@@ -32,7 +35,8 @@
                 <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
               </ul>
             </div>
-          </li>
+          </li>-->
+
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
               <i class="menu-icon mdi mdi-chart-line"></i>
@@ -45,6 +49,7 @@
               </ul>
             </div>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="menu-icon mdi mdi-table"></i>
@@ -57,7 +62,8 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item">
+
+         <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
               <i class="menu-icon mdi mdi-layers-outline"></i>
               <span class="menu-title">Icons</span>
@@ -69,6 +75,7 @@
               </ul>
             </div>
           </li>
+
           <li class="nav-item nav-category">pages</li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
@@ -88,6 +95,6 @@
               <i class="menu-icon mdi mdi-file-document"></i>
               <span class="menu-title">Documentation</span>
             </a>
-          </li>
+          </li> 
         </ul>
       </nav>

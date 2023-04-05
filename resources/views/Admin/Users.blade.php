@@ -27,7 +27,7 @@
                 <div class="card-body">
                   <h4 class="card-title">Liste des utilisateurs</h4>
                   <p class="card-description">
-                    Add class <code>.table-striped</code>
+                    Nombre des utilisateurs :  {{ count($data) }} 
                   </p>
                   <div class="table-responsive">
                     <table class="table table-striped">
@@ -57,7 +57,7 @@
                        @foreach ($data as $data)
                         <tr>
                           <td class="py-1">
-                            <img src="assets/images/faces/face23.jpg" alt="image"/>
+                            <img src="{{ $data->profile_photo_url }}" alt="image"/>
                           </td>
                           <td>
                             {{$data->name}}
