@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var rapport = $('#rapport');
+    var rapport = $('*[name="report"]');
     var wrapper = rapport.parent();
     
     // Mettre la taille de l'iframe à celle de la div parente
@@ -19,8 +19,8 @@ $(document).ready(function() {
 
         rapportURL += "&year=" + year ;
 
-        document.getElementById("rapport").src = rapportURL;
-  document.getElementById("selected-year").innerHTML = year;
+        document.getElementById("Top10Fourniss&Top10Articles").src = rapportURL;
+        document.getElementById("selected-year").innerHTML = year;
 
     }
 

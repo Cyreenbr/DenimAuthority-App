@@ -43,6 +43,9 @@
                             E-mail
                           </th>
                           <th>
+                            Services
+                          </th>
+                          <th>
                             Performance
                           </th>
                           <th>
@@ -64,6 +67,11 @@
                           </td>
                           <td>
                             {{$data->email}}
+                          </td>
+                           <td>
+                            @foreach ($data->services as $service)
+                              {{ $service->nom }} - 
+                            @endforeach
                           </td>
                           <td>
                             <div class="progress">

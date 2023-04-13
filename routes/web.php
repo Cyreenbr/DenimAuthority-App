@@ -27,6 +27,7 @@ Route::get('/', function () {
 
 
 Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'redirects']);
+Route::get('/tableVente', [App\Http\Controllers\HomeController::class, 'TbleVente']);
 Route::get('/users', [App\Http\Controllers\AdminController::class, 'users']);
 Route::get('/createuser', [App\Http\Controllers\AdminController::class, 'createuser']);
 Route::get("/updateuserView/{id}",[AdminController::class,"updateuserview"]);

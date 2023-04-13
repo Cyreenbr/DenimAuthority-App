@@ -29,7 +29,7 @@
                 <div class="tab-content tab-content-basic">
                   <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview"> 
                     <div class="row">
-                      <div class="col-sm-12">
+                     <!-- <div class="col-sm-12">
                         <div class="statistics-details d-flex align-items-center justify-content-between">
                           <div>
                             <p class="statistics-title">Bounce Rate</p>
@@ -64,3 +64,5 @@
                         </div>
                       </div>
                     </div> 
+
+               -->     

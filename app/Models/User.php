@@ -17,6 +17,12 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use HasFactory, Notifiable;
+
+    public function services()
+    {
+        return $this->belongsToMany(Service::class);
+    }
 
     /**
      * The attributes that are mass assignable.
