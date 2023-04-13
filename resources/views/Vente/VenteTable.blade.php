@@ -25,31 +25,69 @@
          @include("sidebar")
       <!-- partial -->
 
+<!--RegisterForm-->
 
-<!--main-panel -->
-      @include("mainpanel")
-<!--main-panelEnd -->
+        <div class="content-wrapper">
 
-             <!--TableNom-->
-                    <div >
-                        <div class="row flex-grow" >
-                          <div class=" grid-margin stretch-card" style="height:1000px;">
-                            <div class="card card-rounded" >
-                              <div class="card-body" >
-                                <div class="d-sm-flex justify-content-between align-items-start">
-                                  <div>
-                                    <h4 class="card-title card-title-dash">table Nomenclature</h4>
-                                   <p class="card-subtitle card-subtitle-dash">Détails</p>
-                                  </div>
-                                </div>
-                                   <iframe  name="report" src="http://desktop-5r4su46:85/ReportServer2023/Pages/ReportViewer.aspx?%2fDenimAuthorityReports%2fNbrCompParNom&rs:Command=Render&rs:embed=true"  width="100%" height="100%" frameborder="0"  ></iframe>
-                              </div>
+           <x-guest-layout>
+    <x-jet-authentication-card>
+       <x-jet-validation-errors class="mb-4" />
+
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
+
+            <div>
+                <x-jet-label for="name" value="{{ __('Name') }}" />
+                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="email" value="{{ __('Email') }}" />
+                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="password" value="{{ __('Password') }}" />
+                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+            </div>
+
+            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
+                <div class="mt-4">
+                    <x-jet-label for="terms">
+                        <div class="flex items-center">
+                            <x-jet-checkbox name="terms" id="terms"/>
+
+                            <div class="ml-2">
+                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
+                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
+                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
+                                ]) !!}
                             </div>
-                          </div>
                         </div>
-                    </div>  
-                      
-             <!--TableNomEnd-->
+                    </x-jet-label>
+                </div>
+            @endif
+
+            <div class="flex items-center justify-end mt-4">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                    {{ __('Already registered?') }}
+                </a>
+
+                <x-jet-button class="ml-4">
+                    {{ __('Register') }}
+                </x-jet-button>
+            </div>
+        </form>
+    </x-jet-authentication-card>
+</x-guest-layout>
+
+<!--RegisterForm End-->
+
 
         <!-- content-wrapper ends -->
         <!-- partial:partials -->
