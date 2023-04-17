@@ -13,6 +13,11 @@ class AdminController extends Controller
          return view('Admin.users',compact('data'));
     }
 
+    public function NewUser()
+    {
+        return view('Admin.NewUser');
+    }
+
     public function updateuserview($id)
     {
         $data = user::find($id);

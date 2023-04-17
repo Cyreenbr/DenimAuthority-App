@@ -4,16 +4,14 @@
 
 <head>
   @include("css")
-   <style>
-      #ReportViewerControl_ctl05
-  {
-    display: none;
-  }
-   </style>
 </head>
 <body>
   
-    <!-- partial:partials/_navbar -->
+    
+       
+           <x-guest-layout>
+
+<!-- partial:partials/_navbar -->
          @include("navbar")
     <!-- partial -->
 
@@ -29,8 +27,8 @@
 
         <div class="content-wrapper">
 
-           <x-guest-layout>
     <x-jet-authentication-card>
+
        <x-jet-validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('register') }}">
@@ -84,7 +82,6 @@
             </div>
         </form>
     </x-jet-authentication-card>
-</x-guest-layout>
 
 <!--RegisterForm End-->
 
@@ -99,6 +96,8 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
+</x-guest-layout>
+
 
     @include("script")
     <!-- ReportScript-->

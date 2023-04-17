@@ -45,9 +45,9 @@
                           <th>
                             Services
                           </th>
-                          <th>
+                        <!--  <th>
                             Performance
-                          </th>
+                          </th> -->
                           <th>
                             date de création
                           </th>
@@ -73,11 +73,11 @@
                               {{ $service->nom }} - 
                             @endforeach
                           </td>
-                          <td>
+                         <!-- <td>
                             <div class="progress">
                               <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                          </td>
+                          </td> -->
                           <td>
                             {{$data->created_at}}
                           </td>
@@ -102,7 +102,7 @@
 
               <!--AddUser-->
          <div class="d-grid gap-2 col-3  mx-auto">  
-          <a class="nav-link" href="{{ route('register') }}">
+          <a class="nav-link" href="{{ url('/NewUser') }}">
             <button type="button" class="btn btn-primary btn-info btn-block">
                       <i class="ti-user"></i>               
                       Ajouter un utilisateur

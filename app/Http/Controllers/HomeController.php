@@ -22,8 +22,41 @@ class HomeController extends Controller
         }
      }
 
-     public function TbleVente()
+     public function UserProfile()
     {
-        return view('Vente.VenteTable');
+        return view('Profile');
     }
+
+    //Vente
+    public function vente()
+    {
+        return view('Vente.vente');
+    }
+
+    public function tableVente()
+    {
+        return view('Vente.tableVente');
+    }
+ 
+    //Achat
+
+    public function tableAchat()
+    {
+        return view('Achat.tableAchat');
+    }
+
+    //Stock
+
+    public function stock()
+    {
+          return view('Stock.stock');
+    }
+
+    //Stock
+
+    public function DeuxiemeChoix()
+    {
+           return view('2emeChoix.2emechoix');
+    }
+
 }
