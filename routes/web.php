@@ -41,6 +41,7 @@ Route::get('/vente', [App\Http\Controllers\HomeController::class, 'vente']);
 
 //Achat route 
 Route::get('/table_détails_achat', [App\Http\Controllers\HomeController::class, 'tableAchat']);
+Route::get('/achat', [App\Http\Controllers\HomeController::class, 'achat']);
 
 //Stock route 
 Route::get('/stock', [App\Http\Controllers\HomeController::class, 'stock']);

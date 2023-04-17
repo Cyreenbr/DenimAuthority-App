@@ -45,6 +45,11 @@ class HomeController extends Controller
         return view('Achat.tableAchat');
     }
 
+    public function achat()
+    {
+        return view('Achat.achat');
+    }
+
     //Stock
 
     public function stock()
