@@ -15,7 +15,7 @@ class AdminController extends Controller
 
     public function NewUser()
     {
-        return view('Admin.register');
+        return view('Admin.createuser');
     }
 
     public function updateuserview($id)

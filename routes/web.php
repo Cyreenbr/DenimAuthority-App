@@ -30,7 +30,7 @@ Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'redirects']
 Route::get('/NewUser', [App\Http\Controllers\AdminController::class, 'NewUser']);
 Route::get('/users', [App\Http\Controllers\AdminController::class, 'users']);
 Route::get('/UserProfile', [App\Http\Controllers\HomeController::class, 'UserProfile']);
-Route::get('/createuser', [App\Http\Controllers\AdminController::class, 'createuser']);
+Route::get('/createuser', [App\Http\Controllers\AdminController::class, 'NewUser']);
 Route::get("/updateuserView/{id}",[AdminController::class,"updateuserview"]);
 Route::post("/updateuser/{id}",[AdminController::class,"updateuser"]);
 Route::get("/deleteuser/{id}",[AdminController::class,"deleteuser"]);
