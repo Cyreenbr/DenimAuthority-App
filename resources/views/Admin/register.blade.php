@@ -1,17 +1,15 @@
+<x-guest-layout>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   @include("css")
+
 </head>
 <body>
   
-    
-       
-           <x-guest-layout>
-
-<!-- partial:partials/_navbar -->
+    <!-- partial:partials/_navbar -->
          @include("navbar")
     <!-- partial -->
 
@@ -21,15 +19,16 @@
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
          @include("sidebar")
-      <!-- partial -->
 
-<!--RegisterForm-->
-
+        <div class="main-panel">
         <div class="content-wrapper">
 
     <x-jet-authentication-card>
+        <x-slot name="logo">
+            <x-jet-authentication-card-logo />
+        </x-slot>
 
-       <x-jet-validation-errors class="mb-4" />
+        <x-jet-validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
@@ -83,12 +82,8 @@
         </form>
     </x-jet-authentication-card>
 
-<!--RegisterForm End-->
 
-
-        <!-- content-wrapper ends -->
-        <!-- partial:partials -->
-         @include("footer")
+     @include("footer")
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -96,14 +91,9 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-</x-guest-layout>
-
 
     @include("script")
-    <!-- ReportScript-->
-      <script src="/js/serviceAchat.js"></script>
-    <!---->
 </body>
 
 </html>
-
+</x-guest-layout>

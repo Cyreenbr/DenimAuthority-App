@@ -29,6 +29,8 @@
 <!--main-panel -->
       @include("mainpanel")
 <!--main-panelEnd -->
+ <iframe src="http://desktop-5r4su46:85/ReportServer2023/Pages/ReportViewer.aspx?%2fDenimAuthorityReports%2fCountFactEtCDParDate&rs:Command=Render&rs:embed=true&rc:Toolbar=false"  ></iframe>
+
 
                     <div class="row" >
                       <div class="col-lg-8 d-flex flex-column">

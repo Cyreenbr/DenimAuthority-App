@@ -1,10 +1,28 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Profile') }}
-        </h2>
-    </x-slot>
 
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <base href="/public">
+  @include("css")
+  @include("cssForm")
+</head>
+<body>
+  
+    <!-- partial:partials/_navbar -->
+         @include("navbar")
+    <!-- partial -->
+
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_settings-panel.html-->
+         @include("settingspanel") 
+      <!-- partial -->
+      <!-- partial:partials/_sidebar.html -->
+         @include("sidebar")
+      <!-- partial -->
+
+        <div class="content-wrapper">
     <div>
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
             @if (Laravel\Fortify\Features::canUpdateProfileInformation())
@@ -42,4 +60,27 @@
             @endif
         </div>
     </div>
+
+     </div>
+    </div>
+
+        <!-- content-wrapper ends -->
+        <!-- partial:partials -->
+         @include("footer")
+        <!-- partial -->
+   
+      <!-- main-panel ends -->
+   
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+    @include("script")
+    <!-- ReportScript-->
+      <script src="/js/serviceAchat.js"></script>
+    <!---->
+</body>
+
+</html>
+
 </x-app-layout>
