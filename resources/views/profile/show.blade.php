@@ -1,4 +1,11 @@
+<head>
+  <base href="/public">
+  @include('css')
+  @include('script')
+</head>
 <x-app-layout>
+  <div class="container-fluid page-body-wrapper">
+    @include('navbar')
     <div>
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
             @if (Laravel\Fortify\Features::canUpdateProfileInformation())
@@ -36,4 +43,6 @@
             @endif
         </div>
     </div>
+ </div> 
+          @include("footer")
 </x-app-layout>
