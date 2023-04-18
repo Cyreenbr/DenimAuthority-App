@@ -5,18 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <link rel="shortcut icon" href="/assets/images/DA-logo.png" />
+        <title>{{ config('app.name', 'Denim Authority Dashboard') }}</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
         @livewireStyles
+
         <link rel="stylesheet" href="/css/app.css">
-
-        <!-- Scripts -->
-        <script src="/js/app.js"></script>
-
+        <script src="/js/app.js" ></script>
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />

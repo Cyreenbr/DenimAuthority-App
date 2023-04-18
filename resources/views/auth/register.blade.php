@@ -1,28 +1,4 @@
 <x-guest-layout>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  @include("css")
-
-</head>
-<body>
-  
-    <!-- partial:partials/_navbar -->
-         @include("navbar")
-    <!-- partial -->
-
-    <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_settings-panel.html-->
-         @include("settingspanel") 
-      <!-- partial -->
-      <!-- partial:partials/_sidebar.html -->
-         @include("sidebar")
-
-        <div class="main-panel">
-        <div class="content-wrapper">
-
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -81,19 +57,4 @@
             </div>
         </form>
     </x-jet-authentication-card>
-
-
-     @include("footer")
-        <!-- partial -->
-      </div>
-      <!-- main-panel ends -->
-    </div>
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
-
-    @include("script")
-</body>
-
-</html>
 </x-guest-layout>

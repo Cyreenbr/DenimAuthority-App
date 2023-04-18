@@ -1,9 +1,11 @@
  <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
         <div class="me-3">
+        @unless(Route::currentRouteName() == 'profile.show')
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-bs-toggle="minimize">
             <span class="icon-menu"></span>
           </button>
+        @endunless  
         </div>
         <div>
           <a class="navbar-brand brand-logo" href="{{url('/welcome')}}">
@@ -152,7 +154,9 @@
               <img class="img-xs rounded-circle" src="{{ auth()->user()->profile_photo_url }}" alt="Profile image"> </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
+               @unless(Route::currentRouteName() == 'profile.show')
                 <img class="img-xs rounded-circle" style="height: 50px ; width:50px" src="{{ auth()->user()->profile_photo_url }}" alt="Profile image">
+               @endunless   
                 <p class="mb-1 mt-3 font-weight-semibold">{{ Auth::user()->name }}</p>
                 <p class="fw-light text-muted mb-0">{{ Auth::user()->email }}</p>
               </div>

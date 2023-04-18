@@ -1,30 +1,12 @@
-
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
   @include("css")
-  @include("cssForm")
 </head>
-<body>
-  
-    <!-- partial:partials/_navbar -->
-         @include("navbar")
-    <!-- partial -->
-
-    <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_settings-panel.html-->
-         @include("settingspanel") 
-      <!-- partial -->
-      <!-- partial:partials/_sidebar.html -->
-         @include("sidebar")
-      <!-- partial -->
-
-        <div class="content-wrapper">
-
-  <x-app-layout>
-
+  @include("script")
+  @include("navbar")
+      
+<x-app-layout>
     <div>
+      <div class="container-fluid page-body-wrapper">
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
             @if (Laravel\Fortify\Features::canUpdateProfileInformation())
                 @livewire('profile.update-profile-information-form')
@@ -60,31 +42,10 @@
                 </div>
             @endif
         </div>
+       </div>
+       @include("footer")  
     </div>
 </x-app-layout>
+ 
 
-
-        
-
-      </div>
-    </div>
-
-        <!-- content-wrapper ends -->
-        <!-- partial:partials -->
-         @include("footer")
-        <!-- partial -->
-   
-      <!-- main-panel ends -->
-   
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
-
-    @include("script")
-    <!-- ReportScript-->
-      <script src="/js/serviceAchat.js"></script>
-    <!---->
-</body>
-
-</html>
 
