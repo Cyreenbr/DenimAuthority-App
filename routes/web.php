@@ -25,10 +25,10 @@ Route::get('/', function () {
     }
 });
 
+Route::post('/userstore', [App\Http\Controllers\AdminController::class, 'userstore']);
 
 Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'redirects']);
-Route::get('/NewUser', [App\Http\Controllers\AdminController::class, 'NewUser']);
-Route::get('/users', [App\Http\Controllers\AdminController::class, 'users']);
+Route::get('/users', [App\Http\Controllers\AdminController::class, 'users'])->name('Users');
 Route::get('/UserProfile', [App\Http\Controllers\HomeController::class, 'UserProfile']);
 Route::get('/createuser', [App\Http\Controllers\AdminController::class, 'NewUser']);
 Route::get("/updateuserView/{id}",[AdminController::class,"updateuserview"]);

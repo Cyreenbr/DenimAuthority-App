@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -18,6 +19,26 @@ class AdminController extends Controller
         return view('Admin.createuser');
     }
 
+    public function userstore(Request $request)
+    {
+        // Validate the request data
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:8',
+        ]);
+    
+        // Create the user
+        $user = User::create([
+            'name' => $validatedData['name'],
+            'email' => $validatedData['email'],
+            'password' => Hash::make($validatedData['password']),
+        ]);
+    
+        // Redirect back to the user creation form with a success message
+        return redirect()->route('Users')->with('success', 'User created successfully.');
+    }
+    
     public function updateuserview($id)
     {
         $data = user::find($id);

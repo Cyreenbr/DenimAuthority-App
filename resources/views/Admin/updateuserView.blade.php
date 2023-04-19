@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+ <base href="/public">
   @include("css")
 
 </head>
