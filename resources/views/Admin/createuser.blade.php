@@ -35,6 +35,17 @@
     <label for="password">Password:</label>
     <input type="password" name="password" id="password" required>
 
+    <div class="form-group">
+    <label>Services</label><br>
+    @foreach($services as $service)
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="service{{ $service->id }}" name="services[]" value="{{ $service->id }}">
+            <label  for="service{{ $service->id }}">{{ $service->nom }}</label>
+        </div>
+    @endforeach
+    </div>
+
+
     <button type="submit">Create User</button>
 </form>
 

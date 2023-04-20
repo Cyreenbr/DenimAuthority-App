@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Service;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -16,7 +17,8 @@ class AdminController extends Controller
 
     public function NewUser()
     {
-        return view('Admin.createuser');
+        $services = Service::all();
+        return view('Admin.createuser', ['services' => $services]);
     }
 
     public function userstore(Request $request)
@@ -34,6 +36,8 @@ class AdminController extends Controller
             'email' => $validatedData['email'],
             'password' => Hash::make($validatedData['password']),
         ]);
+
+        $user->services()->attach($request->services);
     
         // Redirect back to the user creation form with a success message
         return redirect()->route('Users')->with('success', 'User created successfully.');

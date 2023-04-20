@@ -102,7 +102,7 @@
 
               <!--AddUser-->
          <div class="d-grid gap-2 col-3  mx-auto">  
-          <a class="nav-link" href="{{ url('/NewUser') }}">
+          <a class="nav-link" href="{{ url('/createuser') }}">
             <button type="button" class="btn btn-primary btn-info btn-block">
                       <i class="ti-user"></i>               
                       Ajouter un utilisateur
