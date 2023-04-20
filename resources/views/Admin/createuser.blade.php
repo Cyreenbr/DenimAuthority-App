@@ -23,32 +23,49 @@
         <div class="content-wrapper">
 
      <!--Form-->
-       <form method="POST" action="{{ url('/userstore') }}">
-    @csrf
-
-    <label for="name">Name:</label>
-    <input type="text" name="name" id="name" required>
-
-    <label for="email">Email:</label>
-    <input type="email" name="email" id="email" required>
-
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required>
-
-    <div class="form-group">
-    <label>Services</label><br>
-    @foreach($services as $service)
-        <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="service{{ $service->id }}" name="services[]" value="{{ $service->id }}">
-            <label  for="service{{ $service->id }}">{{ $service->nom }}</label>
-        </div>
-    @endforeach
-    </div>
-
-
-    <button type="submit">Create User</button>
-</form>
-
+     <div class="d-flex justify-content-center align-items-center">
+     <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                 <h4 class="card-title">Nouveau utilisateur</h4>
+                  <p class="card-description">
+                    Ajouter un nouveau utilisateur
+                  </p>
+                   <form class="forms-sample" method="POST" action="{{ url('/userstore') }}">
+                       @csrf
+                    <div class="form-group">
+                      <label for="name">Nom</label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Adresse email</label>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Mot de passe</label>
+                      <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="confirmpassword">Confirme mot de passe</label>
+                      <input type="password" class="form-control" id="confirmpassword" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                       <label>Services</label><br>
+                          @foreach($services as $service)
+                             <div class="form-check form-check-flat form-check-primary">
+                                <label class="form-check-label"  for="service{{ $service->id }}">
+                                   <input type="checkbox" class="form-check-input" id="service{{ $service->id }}" name="services[]" value="{{ $service->id }}"> 
+                                      {{ $service->nom }}
+                                </label>
+                             </div>
+                           @endforeach
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+           </div>
             <!--FormEnd-->
           </div>  
       </div>  
