@@ -70,7 +70,7 @@
                           </td>
                            <td>
                             @foreach ($data->services as $service)
-                              {{ $service->nom }} - 
+                              {{ $service->nom }} &nbsp;
                             @endforeach
                           </td>
                          <!-- <td>
@@ -84,7 +84,7 @@
                           <td>
                            @if ($data->user_type == 0)
                              <a href="{{url('/deleteuser',$data->id)}}">Supprimer</a>
-                            <a href="{{url('/updateuserView',$data->id)}}">Modifier</a>
+                           <!-- <a href="{{url('/updateuserView',$data->id)}}">Modifier</a> -->
                            @else
                               Non autorisé
                            @endif
