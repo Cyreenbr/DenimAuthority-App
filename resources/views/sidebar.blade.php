@@ -44,18 +44,26 @@
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="charts">
-              <ul class="nav flex-column sub-menu">
+            @if (auth()->user()->services->contains('nom', 'Achat'))
+               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{url('achat')}}">Achat</a></li>
               </ul>
+            @endif
+            @if (auth()->user()->services->contains('nom', 'Vente'))
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{url('vente')}}">Vente</a></li>
               </ul>
+            @endif  
+            @if (auth()->user()->services->contains('nom', 'Stock'))  
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{url('stock')}}">Stock</a></li>
               </ul>
+            @endif  
+            @if (auth()->user()->services->contains('nom', 'Production'))  
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{url('2emeChoix')}}">Production</a></li>
               </ul>
+            @endif  
             </div>
           </li>
 
@@ -67,8 +75,12 @@
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
+               @if (auth()->user()->services->contains('nom', 'Achat'))  
                 <li class="nav-item"> <a class="nav-link" href="{{url('table_détails_achat')}}">Table d'achat</a></li>
+               @endif   
+               @if (auth()->user()->services->contains('nom', 'Vente'))                  
                 <li class="nav-item"> <a class="nav-link" href="{{url('table_détails_vente')}}">Table de vente</a></li>
+               @endif   
               </ul>
             </div>
           </li>

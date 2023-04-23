@@ -83,12 +83,12 @@
                           </td>
                           <td>
                            @if ($data->user_type == 0)
-                             <a href="{{url('/deleteuser',$data->id)}}">Supprimer</a>
+                             <a href="{{url('/deleteuser',$data->id)}}">
+                               <button type="button" class="btn btn-outline-danger btn-fw btn-sm">Supprimer</button>
+                             </a>
                            <!-- <a href="{{url('/updateuserView',$data->id)}}">Modifier</a> -->
-                           @else
-                              Non autorisé
                            @endif
-                            
+                             <button type="button" class="btn btn-outline-info btn-fw btn-sm">Modifier</button>
                           </td>
                         </tr>
                        @endforeach
