@@ -23,14 +23,12 @@ class AdminController extends Controller
 
     public function userstore(Request $request)
     {
-        // Validate the request data
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8',
         ]);
     
-        // Create the user
         $user = User::create([
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
@@ -39,14 +37,14 @@ class AdminController extends Controller
 
         $user->services()->attach($request->services);
     
-        // Redirect back to the user creation form with a success message
         return redirect()->route('Users')->with('success', 'User created successfully.');
     }
     
     public function updateuserview($id)
     {
         $data = user::find($id);
-        return view('Admin.updateuserView',compact('data'));
+        $services = Service::all();
+        return view('Admin.updateuserView',compact('data'),['services' => $services]);
     }
 
     public function updateuser(Request $request,$id){
@@ -55,11 +53,12 @@ class AdminController extends Controller
         
         $data->name = $request->name;
         $data->email = $request->email;
-        $data->password = $request->password;
         $data->save();
+        $services = $request->input('services', []); 
+        $data->services()->sync($services);
 
         $data=user::all();
-        return view('Admin.users',compact('data'));;
+        return redirect()->route('Users')->with('data', $data);
 
     }
     

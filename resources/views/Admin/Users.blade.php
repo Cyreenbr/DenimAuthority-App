@@ -85,10 +85,13 @@
                            @if ($data->user_type == 0)
                              <a href="{{url('/deleteuser',$data->id)}}">
                                <button type="button" class="btn btn-outline-danger btn-fw btn-sm">Supprimer</button>
-                             </a>
-                           <!-- <a href="{{url('/updateuserView',$data->id)}}">Modifier</a> -->
+                             </a> 
+                              <a href="{{url('/updateuserView',$data->id)}}">
+                                 <button type="button" class="btn btn-outline-info btn-fw btn-sm">Modifier</button>
+                              </a>  
+                           @else
+                             Non autorisé
                            @endif
-                             <button type="button" class="btn btn-outline-info btn-fw btn-sm">Modifier</button>
                           </td>
                         </tr>
                        @endforeach
