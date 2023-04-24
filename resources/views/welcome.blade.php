@@ -29,10 +29,12 @@
 <!--main-panel -->
       @include("mainpanel")
 <!--main-panelEnd -->
+
+
  <iframe src="http://desktop-5r4su46:85/ReportServer2023/Pages/ReportViewer.aspx?%2fDenimAuthorityReports%2fCountFactEtCDParDate&rs:Command=Render&rs:embed=true&rc:Toolbar=false"  ></iframe>
 
 
-                    <div class="row" >
+                    <div class="row" id="div-to-print">
                       <div class="col-lg-8 d-flex flex-column">
                         <div class="row flex-grow">
                           <div class="col-12 grid-margin stretch-card">
@@ -68,7 +70,12 @@
                               </div>
                             </div>
                           </div>
-                        </div>
+                    <div class="btn-wrapper">
+                      <a href="#" class="btn btn-otline-dark align-items-center"><i class="icon-share"></i> Share</a>
+                      <a href="#" class="btn btn-otline-dark" ><button id="print-button" ><i class="icon-printer"></i> Print</button></a>
+                      <a href="http://desktop-5r4su46:85/ReportServer2023/Pages/ReportViewer.aspx?%2fDenimAuthorityReports%2fTop10FournissEtTop10Produit&rs:Command=Render&rs:Format=PDF" class="btn btn-primary text-white me-0"><i class="icon-download"></i> Export</a>
+                    </div>
+              </div>   
 
              <!--TableNom-->
                         <div class="row flex-grow">
@@ -91,6 +98,11 @@
                               </div>
                             </div>
                           </div>
+                    <div class="btn-wrapper">
+                      <a href="#" class="btn btn-otline-dark align-items-center"><i class="icon-share"></i> Share</a>
+                      <a href="#" class="btn btn-otline-dark" id="print-button"><i class="icon-printer"></i> Print</a>
+                      <a href="#" class="btn btn-primary text-white me-0"><i class="icon-download"></i> Export</a>
+                    </div>
                         </div>
              <!--TableNomEnd-->
 
@@ -374,6 +386,17 @@
     @include("script")
     <!-- ReportScript-->
       <script src="/js/serviceAchat.js"></script>
+      
+
+            <script>
+            document.getElementById('print-button').addEventListener('click', function() {
+            var printContents = document.getElementById('div-to-print').innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+            });
+            </script>         
     <!---->
 </body>
 

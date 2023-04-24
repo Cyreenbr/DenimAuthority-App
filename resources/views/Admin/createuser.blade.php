@@ -31,6 +31,7 @@
                   <p class="card-description">
                     Ajouter un nouveau utilisateur
                   </p>
+                          <x-jet-validation-errors class="mb-4" style="color:red;"/>
                    <form class="forms-sample" method="POST" action="{{ url('/userstore') }}">
                        @csrf
                     <div class="form-group">

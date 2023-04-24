@@ -14,7 +14,7 @@ $(document).ready(function() {
 });
 
     function afficherRapport(year) {
-        var rapportURL = "http://desktop-46kokp9/ReportServer1/Pages/ReportViewer.aspx?%2fREporting%2fTop10FournissEtTop10Produit&rs:Command=Render&rs:embed=true&rc:Toolbar=false";
+        var rapportURL = "http://desktop-5r4su46:85/ReportServer2023/Pages/ReportViewer.aspx?%2fDenimAuthorityReports%2fTop10FournissEtTop10Produit&rs:Command=Render&rs:embed=true&rc:Toolbar=false&rc:Parameters=false";
 
 
         rapportURL += "&year=" + year ;
