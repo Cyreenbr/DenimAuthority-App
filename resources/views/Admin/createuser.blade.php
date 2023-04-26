@@ -3,6 +3,10 @@
 
 <head>
   @include("css")
+
+  <!-- jQuery-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
   
@@ -54,7 +58,7 @@
                           @foreach($services as $service)
                              <div class="form-check form-check-flat form-check-primary">
                                 <label class="form-check-label"  for="service{{ $service->id }}">
-                                   <input type="checkbox" class="form-check-input" id="service{{ $service->id }}" name="services[]" value="{{ $service->id }}"> 
+                                   <input type="checkbox" class="service-checkbox form-check-input" id="service{{ $service->id }}" name="services[]" value="{{ $service->id }}"> 
                                       {{ $service->nom }}
                                 </label>
                              </div>
@@ -63,7 +67,7 @@
                     <blockquote class="blockquote" style="color:blue">
                        <div class="form-check">
                          <label class="form-check-label">
-                            <input class="checkbox" type="checkbox" name="user_type" value="1">
+                            <input class="checkbox" type="checkbox" name="user_type" id="admin-checkbox" value="1">
                               Admin
                          </label>
                        </div>
@@ -94,9 +98,9 @@
   <!-- container-scroller -->
 
     @include("script")
-    <!-- ReportScript-->
-      <script src="/js/serviceAchat.js"></script>
-    <!---->
+
+    <!-- CheckBox -->
+      <script src="/js/AdminCheckServicesCheck.js"></script>
 </body>
 
 </html>
