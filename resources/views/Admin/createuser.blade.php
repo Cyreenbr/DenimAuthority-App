@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,6 +60,14 @@
                              </div>
                            @endforeach
                     </div>
+                    <blockquote class="blockquote" style="color:blue">
+                       <div class="form-check">
+                         <label class="form-check-label">
+                            <input class="checkbox" type="checkbox" name="user_type" value="1">
+                              Admin
+                         </label>
+                       </div>
+                    </blockquote>
                     <button type="submit" class="btn btn-primary me-2">Submit</button>
                   </form>
                 </div>

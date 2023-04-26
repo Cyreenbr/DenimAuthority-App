@@ -22,23 +22,26 @@ class AdminController extends Controller
     }
 
     public function userstore(Request $request)
-    {
-        $validatedData = $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:8',
-        ]);
-    
-        $user = User::create([
-            'name' => $validatedData['name'],
-            'email' => $validatedData['email'],
-            'password' => Hash::make($validatedData['password']),
-        ]);
+    {  
 
+        $user = new user;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        if ($request->has('user_type')) {
+            $user->user_type = '1';
+        } else {
+            $user->user_type = '0';
+        }
+        $user->password = Hash::make($request->password);
+        $user->save();
+    
+        $user_id = $user->id; 
         $user->services()->attach($request->services);
     
         return redirect()->route('Users')->with('success', 'User created successfully.');
-    }
+
+    }    
+
     
     public function updateuserview($id)
     {

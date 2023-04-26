@@ -27,9 +27,9 @@
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Default form</h4>
+                  <h4 class="card-title">Modifier un Utilisateur</h4>
                   <p class="card-description">
-                    Basic form layout
+                    ajout ou suppression des services
                   </p>
                   <form class="forms-sample"  action="{{url('/updateuser',$data->id)}}" method="post"  enctype="multipart/form-data">
                       @csrf
