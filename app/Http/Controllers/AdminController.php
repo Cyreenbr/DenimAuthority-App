@@ -23,6 +23,12 @@ class AdminController extends Controller
 
     public function userstore(Request $request)
     {  
+        $existing_user = User::where('email', $request->email)->first();
+
+    if ($existing_user) {
+        // Email already exists, return error response
+        return redirect()->back()->withErrors(['email' => 'Email address already exists.'])->withInput();
+    }
 
         $user = new user;
         $user->name = $request->name;
