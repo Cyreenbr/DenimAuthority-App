@@ -4,6 +4,12 @@
 
 <head>
   @include("css")
+   <style>
+      #ReportViewerControl_ctl05
+  {
+    display: none;
+  }
+   </style>
 </head>
 <body>
   
@@ -23,14 +29,19 @@
 <!--main-panel -->
       @include("mainpanel")
 <!--main-panelEnd -->
+
+
+ <iframe src="http://desktop-5r4su46:85/ReportServer2023/Pages/ReportViewer.aspx?%2fRapportsDenimAuthority%2fServiceProduction&rs:Command=Render&rs:embed=true&rc:Toolbar=false" height="2000px" width="100%" ></iframe>
+
+
                         
                       
-           
+            
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
          @include("footer")
         <!-- partial -->
-    </div> 
+      </div>
       <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->

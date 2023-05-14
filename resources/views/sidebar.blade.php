@@ -32,22 +32,22 @@
             <div class="collapse" id="charts">
             @if (auth()->user()->services->contains('nom', 'Achat'))
                <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url('achat')}}">Achat</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('AchatsDashboard')}}">Achat</a></li>
               </ul>
             @endif
             @if (auth()->user()->services->contains('nom', 'Vente'))
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url('vente')}}">Vente</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('VentesDashboard')}}">Vente</a></li>
               </ul>
             @endif  
             @if (auth()->user()->services->contains('nom', 'Stock'))  
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url('stock')}}">Stock</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('StockDashboard')}}">Stock</a></li>
               </ul>
             @endif  
             @if (auth()->user()->services->contains('nom', 'Production'))  
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url('2emeChoix')}}">Production</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('ProductionDashboard')}}">Production</a></li>
               </ul>
             @endif  
             </div>

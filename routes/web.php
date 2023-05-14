@@ -37,17 +37,19 @@ Route::get("/deleteuser/{id}",[AdminController::class,"deleteuser"]);
 
 //Vente route 
 Route::get('/table_détails_vente', [App\Http\Controllers\HomeController::class, 'tableVente']);
-Route::get('/vente', [App\Http\Controllers\HomeController::class, 'vente']);
+Route::get('/VentesDashboard', [App\Http\Controllers\HomeController::class, 'VentesDashboard']);
 
 //Achat route 
 Route::get('/table_détails_achat', [App\Http\Controllers\HomeController::class, 'tableAchat']);
-Route::get('/achat', [App\Http\Controllers\HomeController::class, 'achat']);
+Route::get('/AchatsDashboard', [App\Http\Controllers\HomeController::class, 'AchatsDashboard']);
 
 //Stock route 
-Route::get('/stock', [App\Http\Controllers\HomeController::class, 'stock']);
+Route::get('/StockDashboard', [App\Http\Controllers\HomeController::class, 'StockDashboard']);
 
-//2emeChoix route 
-Route::get('/2emeChoix', [App\Http\Controllers\HomeController::class, 'DeuxiemeChoix']);
+//Production route 
+Route::get('/ProductionDashboard', [App\Http\Controllers\HomeController::class, 'ProductionDashboard']);
+Route::get('/DeuxiemeChoixDashboard', [App\Http\Controllers\HomeController::class, 'DeuxiemeChoixDashboard']);
+
 
 Route::middleware([
     'auth:sanctum',

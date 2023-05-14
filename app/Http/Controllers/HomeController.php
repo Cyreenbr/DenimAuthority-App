@@ -22,15 +22,20 @@ class HomeController extends Controller
         }
      }
 
+     public function AchatsDashboard()
+    {
+        return view('AchatDashboard');
+    } 
+
      public function UserProfile()
     {
         return view('Profile');
     }
 
     //Vente
-    public function vente()
+    public function VentesDashboard()
     {
-        return view('Vente.vente');
+        return view('Vente.VentesDashboard');
     }
 
     public function tableVente()
@@ -47,21 +52,26 @@ class HomeController extends Controller
 
     public function achat()
     {
-        return view('Achat.achat');
+        return view('Achat.AchatDashoard');
     }
 
     //Stock
 
-    public function stock()
+    public function StockDashboard()
     {
-          return view('Stock.stock');
+          return view('Stock.StockDashboard');
     }
 
-    //Stock
-
-    public function DeuxiemeChoix()
+    //Prod 
+    public function ProductionDashboard()
     {
-           return view('2emeChoix.2emechoix');
+           return view('Production.ProductionDashboard');
     }
+
+    public function  DeuxiemeChoixDashboard()
+    {
+           return view('Production.DeuxiemeChoixDashboard');
+    }
+
 
 }
