@@ -30,12 +30,12 @@
       @include("mainpanel")
 <!--main-panelEnd -->
 
+<div id="my-div">
+ <iframe src="http://desktop-5r4su46:85/ReportServer2023/Pages/ReportViewer.aspx?%2fRapportsDenimAuthority%2fServiceProduction&rs:Command=Render&rs:embed=true&rc:Toolbar=false" height="500px" width="100%" ></iframe>
 
- <iframe src="http://desktop-5r4su46:85/ReportServer2023/Pages/ReportViewer.aspx?%2fRapportsDenimAuthority%2fServiceProduction&rs:Command=Render&rs:embed=true&rc:Toolbar=false" height="2000px" width="100%" ></iframe>
 
-
-                        
-                      
+  <iframe src="http://desktop-5r4su46:85/ReportServer2023/Pages/ReportViewer.aspx?%2fRapportsDenimAuthority%2fProductionService+(1)&rs:Command=Render&rs:embed=true&rc:Toolbar=false" height="2000px" width="100%" ></iframe>
+</div>                                          
             
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->

@@ -34,6 +34,7 @@ Route::get('/createuser', [App\Http\Controllers\AdminController::class, 'NewUser
 Route::get("/updateuserView/{id}",[AdminController::class,"updateuserview"]);
 Route::post("/updateuser/{id}",[AdminController::class,"updateuser"]);
 Route::get("/deleteuser/{id}",[AdminController::class,"deleteuser"]);
+Route::get("/search",[AdminController::class,"search"]);
 
 //Vente route 
 Route::get('/table_détails_vente', [App\Http\Controllers\HomeController::class, 'tableVente']);

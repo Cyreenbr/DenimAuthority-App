@@ -22,11 +22,6 @@ class HomeController extends Controller
         }
      }
 
-     public function AchatsDashboard()
-    {
-        return view('AchatDashboard');
-    } 
-
      public function UserProfile()
     {
         return view('Profile');
@@ -50,9 +45,9 @@ class HomeController extends Controller
         return view('Achat.tableAchat');
     }
 
-    public function achat()
+    public function AchatsDashboard()
     {
-        return view('Achat.AchatDashoard');
+        return view('Achat.AchatDashboard');
     }
 
     //Stock

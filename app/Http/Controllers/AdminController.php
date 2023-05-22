@@ -78,4 +78,14 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    public function search(Request $request)
+    {    
+        $search=$request->search;
+
+        $data = user::where('name', 'like', '%' . $search . '%')->get();
+
+         return view('Admin.users',compact('data'));
+    }
+
+
 }
