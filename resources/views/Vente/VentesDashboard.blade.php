@@ -31,7 +31,7 @@
 <!--main-panelEnd -->
 
 <div id="my-div">
- <iframe src="http://desktop-5r4su46:85/ReportServer2023/Pages/ReportViewer.aspx?%2fRapportsDenimAuthority%2fServiceVente&rs:Command=Render&rs:embed=true&rc:Toolbar=false" height="2000px" width="100%" ></iframe>
+ <iframe id="Dashboard" src="" height="2000px" width="100%" ></iframe>
 </div>
           
         <!-- content-wrapper ends -->
@@ -45,7 +45,18 @@
   </div>
   <!-- container-scroller -->
 
-    @include("script")
+<!--Onload-->
+<script>
+   window.onload = function() {
+       var SidebarButton = document.getElementById('navbar_button');
+       SidebarButton.click();
+       var Parameterbutton = document.getElementById('');
+       Parameterbutton.click();
+   };
+</script> 
+
+<script src="/js/Vente&AchatControl.js"></script>
+@include("script")
 
 </body>
 

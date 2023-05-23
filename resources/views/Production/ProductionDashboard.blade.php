@@ -1,15 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   @include("css")
-   <style>
-      #ReportViewerControl_ctl05
-  {
-    display: none;
-  }
-   </style>
 </head>
 <body>
   
@@ -31,24 +24,36 @@
 <!--main-panelEnd -->
 
 <div id="my-div">
- <iframe src="http://desktop-5r4su46:85/ReportServer2023/Pages/ReportViewer.aspx?%2fRapportsDenimAuthority%2fServiceProduction&rs:Command=Render&rs:embed=true&rc:Toolbar=false" height="500px" width="100%" ></iframe>
 
+ <iframe src="" id="DashboardProd" height="500px" width="100%" ></iframe>
+ <iframe src="" id="DashboardDeuxiemeChoix" height="2000px" width="100%" ></iframe>
 
-  <iframe src="http://desktop-5r4su46:85/ReportServer2023/Pages/ReportViewer.aspx?%2fRapportsDenimAuthority%2fProductionService+(1)&rs:Command=Render&rs:embed=true&rc:Toolbar=false" height="2000px" width="100%" ></iframe>
 </div>                                          
-            
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-         @include("footer")
-        <!-- partial -->
-      </div>
-      <!-- main-panel ends -->
-    </div>
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
 
-    @include("script")
+<!--footer-->
+         @include("footer")
+<!-- partial -->
+      </div>
+<!-- main-panel ends -->
+    </div>
+<!-- page-body-wrapper ends -->
+  </div>
+<!-- container-scroller -->
+
+
+<!--Onload-->
+<script>
+   window.onload = function() {
+       var SidebarButton = document.getElementById('navbar_button');
+       SidebarButton.click();
+       var Parameterbutton = document.getElementById('');
+       Parameterbutton.click();
+   };
+</script> 
+
+<!--Parameter Script-->
+<script src="/js/ProdControl.js"></script>
+@include("script")
 
 </body>
 

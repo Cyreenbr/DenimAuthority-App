@@ -1,8 +1,8 @@
- <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+ <nav class="navbar default-layout col-lg-12 col-12 p-0 h-5 fixed-top d-flex align-items-top flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
         <div class="me-3">
         @unless(Route::currentRouteName() == 'profile.show')
-          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-bs-toggle="minimize">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" id="navbar_button" data-bs-toggle="minimize">
             <span class="icon-menu"></span>
           </button>
         @endunless  
