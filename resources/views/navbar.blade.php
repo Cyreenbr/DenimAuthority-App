@@ -19,8 +19,26 @@
       <div class="navbar-menu-wrapper d-flex align-items-top"> 
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Bonjour, <span class="text-black fw-bold">{{ Auth::user()->name }}</span></h1>
-            <h3 class="welcome-sub-text">Vous trouvez tous vos Dashbaords içi</h3>
+            
+             @if(url()->current() === "http://127.0.0.1:8000/VentesDashboard" )
+               <h1 class="welcome-text"> Tableau de bord <span class="text-black fw-bold">Ventes</span></h1>
+             @else  
+              @if(url()->current() === "http://127.0.0.1:8000/AchatsDashboard" )
+               <h1 class="welcome-text"> Tableau de bord <span class="text-black fw-bold">Achats</span></h1>
+              @else  
+                @if(url()->current() === "http://127.0.0.1:8000/StockDashboard" )
+                  <h1 class="welcome-text"> Tableau de bord <span class="text-black fw-bold">Stock</span></h1>
+                @else  
+                  @if(url()->current() === "http://127.0.0.1:8000/ProductionDashboard" )
+                     <h1 class="welcome-text"> Tableau de bord <span class="text-black fw-bold">Production</span></h1>
+                  @else   
+                    <h1 class="welcome-text">Bonjour, <span class="text-black fw-bold">{{ Auth::user()->name }}</span></h1>
+                    <h3 class="welcome-sub-text">Vous trouvez tous vos Dashbaords içi</h3> 
+             @endif
+                @endif
+                  @endif
+                     @endif
+
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">

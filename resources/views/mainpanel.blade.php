@@ -23,16 +23,16 @@
                    @if(url()->current() === "http://127.0.0.1:8000/ProductionDashboard" )
                     <ul class="nav nav-tabs" role="tablist">
                       <li class="nav-item">                  
-                          <button type="button" name="year" class="btn btn-inverse-primary btn-lg btn-fw" onclick="GetYear('2020')">2020</button>
+                          <button type="button" name="year" value="2020" class="btn btn-inverse-primary btn-lg btn-fw" onclick="GetYear('2020')">2020</button>
                       </li>
                       <li class="nav-item">    
-                          <button type="button" name="year" class="btn btn-inverse-primary btn-lg btn-fw " onclick="GetYear('2021')">2021</button>
+                          <button type="button" name="year" value="2021" class="btn btn-inverse-primary btn-lg btn-fw " onclick="GetYear('2021')">2021</button>
                       </li>
                       <li class="nav-item">    
-                          <button type="button" name="year" class="btn btn-inverse-primary btn-lg btn-fw" onclick="GetYear('2022')">2022</button>
+                          <button type="button" name="year" value="2022" class="btn btn-inverse-primary btn-lg btn-fw" onclick="GetYear('2022')">2022</button>
                       </li>
                       <li class="nav-item">    
-                          <button type="button" name="year" class="btn btn-inverse-primary btn-lg btn-fw" onclick="GetYear('2023')">2023</button> 
+                          <button type="button" name="year" value="2023" class="btn btn-inverse-primary btn-lg btn-fw" onclick="GetYear('2023')">2023</button> 
                       </li>  
                     </ul>  
                     <ul class="nav nav-tabs" role="tablist">

@@ -7,7 +7,7 @@ async function updateDashboardProdURL(year, jalon) {
     var rapportProdURL = baseReportURL + "?%2fRapportsDenimAuthority%2fServiceProduction&rs:Command=Render&rs:embed=true&rc:Toolbar=false";
     rapportProdURL += "&date=" + year;
 
-        rapportProdURL += "&Jalon=" + jalon;
+    rapportProdURL += "&Jalon=" + jalon;
 
     document.getElementById("DashboardProd").src = rapportProdURL;
 }
@@ -19,8 +19,6 @@ async function updateDashboardDeuxiemeChoixURL(year) {
 }
 
 async function GetYear(year) {
-    var button = document.getElementById("year");
-    button.classList.toggle("clicked"); 
     year_var = year ;
     await updateDashboardProdURL(year_var , jalon_var);
     await updateDashboardDeuxiemeChoixURL(year_var);
@@ -31,5 +29,5 @@ async function GetJalon(jalon) {
     await updateDashboardProdURL(year_var, jalon_var);
 }
 
-updateDashboardProdURL("2023", "PIQUAGE");
-updateDashboardDeuxiemeChoixURL("2023");
+updateDashboardProdURL("2022", "PIQUAGE");
+updateDashboardDeuxiemeChoixURL("2022");
