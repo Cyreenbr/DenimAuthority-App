@@ -90,7 +90,7 @@
           <li class="nav-item nav-category">Denim Authority</li>
           <li class="nav-item">
             <a class="nav-link" href="https://www.denimauthority.com/" target="_blank">
-              <i class="menu-icon mdi mdi-file-document"></i>
+              <i class="menu-icon mdi mdi-desktop-mac"></i>
               <span class="menu-title">Site Web</span>
             </a>
           </li> 
