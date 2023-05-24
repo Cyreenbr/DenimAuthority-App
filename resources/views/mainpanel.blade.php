@@ -77,14 +77,15 @@
                       <a class="nav-link border-0" id="more-tab" data-bs-toggle="tab" href="#more" role="tab" aria-selected="false">More</a>
                     </li>
                    -->
-                
-                  <div>
+          @unless(Route::currentRouteName() == 'welcome')
+            <div>
                     <div class="btn-wrapper">
                       <a href="#" class="btn btn-otline-dark align-items-center"><i class="icon-share"></i> Share</a>
                       <a href="#" class="btn btn-otline-dark" id="print-button"><i class="icon-printer"></i> Print</a>
                       <a href="#" class="btn btn-primary text-white me-0"><i class="icon-download"></i> Export</a>
                     </div>
-                  </div>
+            </div>
+          @endunless
                 </div>
                 <div class="tab-content tab-content-basic">
                   <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview"> 
