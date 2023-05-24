@@ -22,15 +22,8 @@ class AdminController extends Controller
     }
 
     public function userstore(Request $request)
-    {  
-        $existing_user = User::where('email', $request->email)->first();
-
-    if ($existing_user) {
-        // Email already exists, return error response
-        return redirect()->back()->withErrors(['email' => 'Email address already exists.'])->withInput();
-    }
-
-        $user = new user;
+    {
+        $user = new User;
         $user->name = $request->name;
         $user->email = $request->email;
         if ($request->has('user_type')) {
@@ -41,11 +34,9 @@ class AdminController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
     
-        $user_id = $user->id; 
         $user->services()->attach($request->services);
     
-        return redirect()->route('Users')->with('success', 'User created successfully.');
-
+        return redirect()->route('Users')->with('success', $user->name . ' Créé avec succès.');
     }    
 
     
@@ -56,26 +47,25 @@ class AdminController extends Controller
         return view('Admin.updateuserView',compact('data'),['services' => $services]);
     }
 
-    public function updateuser(Request $request,$id){
-
-        $data = user::find($id);
-        
+    public function updateuser(Request $request, $id)
+    {
+        $data = User::find($id);
+    
         $data->name = $request->name;
         $data->email = $request->email;
         $data->save();
-        $services = $request->input('services', []); 
-        $data->services()->sync($services);
-
-        $data=user::all();
-        return redirect()->route('Users')->with('data', $data);
-
-    }
     
+        $services = $request->input('services', []);
+        $data->services()->sync($services);
+    
+        return redirect()->route('Users')->with('success', $data->name . ' Modifié avec succès.');
+    }
+
     public function deleteuser($id)
     {
         $data=user::find($id);
         $data->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success', $data->name.' Supprimé avec succès.');
     }
 
     public function search(Request $request)

@@ -100,7 +100,14 @@
     @include("script")
 
     <!-- CheckBox -->
-      <script src="/js/AdminCheckServicesCheck.js"></script>
+<script src="/js/AdminCheckServicesCheck.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    @if(session('success'))
+        swal("Success", "{{ session('success') }}", "success");
+    @endif
+</script>
+
 </body>
 
 </html>

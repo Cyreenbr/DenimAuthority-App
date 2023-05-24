@@ -127,7 +127,14 @@
   </div>
   <!-- container-scroller -->
 
-    @include("script")
+@include("script")
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    @if(session('success'))
+        swal("Success", "{{ session('success') }}", "success");
+    @endif
+</script>
+
 </body>
 
 </html>
