@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Service;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
@@ -19,8 +20,8 @@ class AdminController extends Controller
     {
         $services = Service::all();
         return view('Admin.createuser', ['services' => $services]);
-    }
-
+    } 
+    
     public function userstore(Request $request)
     {
         $user = new User;
@@ -31,13 +32,16 @@ class AdminController extends Controller
         } else {
             $user->user_type = '0';
         }
-        $user->password = Hash::make($request->password);
+    
+        $password = Str::random(10);
+    
+        $user->password = Hash::make($password);
         $user->save();
     
         $user->services()->attach($request->services);
-    
-        return redirect()->route('Users')->with('success', $user->name . ' Créé avec succès.');
-    }    
+        
+        return redirect()->route('Users')->with('success', $user->name . ' Créé avec succès . Mot de passe : ' . $password);
+    }
 
     
     public function updateuserview($id)

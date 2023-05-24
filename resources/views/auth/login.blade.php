@@ -1,48 +1,79 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-        <x-jet-validation-errors class="mb-4" />
+    <title>DA Dashboard | Login</title>
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
+</head>
+<body >
+
+   <div class="box">
+         <div class="container">
+
+
+ @if (session('status'))
+                 <div class="mb-4 font-medium text-sm text-green-600">
                 {{ session('status') }}
-            </div>
-        @endif
-
+                 </div>
+        @endif 
+        <div id="div_log">
+      
         <form method="POST" action="{{ route('login') }}">
             @csrf
+        
 
-            <div>
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+            <div class="top">
+            <span style="font-family: serif;font-size:20px">Have an account?</span>
+            <header>Login</header>
             </div>
 
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+
+            <div class="input-field">
+            <input   name="email" type="email" class="input block mt-1 w-full" 
+           :value="old('email')" required autofocus  placeholder="Email" id="email">
+
+           <i class='bx bx-user' ></i>
+
             </div>
 
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-jet-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
+           <div class="input-field">
+           <input name="password" id="password" type="password" class="input block mt-1 w-full"
+            required autocomplete="current-password" placeholder="Password">
+            <i class='bx bx-lock-alt' ></i>
             </div>
+       
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+            <div class="input-field">
+            <input type="submit" class="submit" value="Login" id="">
+              </div>
 
-                <x-jet-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-jet-button>
+            <div class="two-col">
+               <div class="one">
+               <input type="checkbox" name="remember" id="remember_me" >
+               <label for="remeber_me"> Remember Me</label>
+               </div>
+
+            @if (Route::has('password.request'))
+
+            <div class="two">
+                <label><a href="{{ route('password.request') }}">Forgot password?</a></label>
             </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+           @endif
+            </div>
+          </div>
+         <img src="dashboard.png" alt="">
+
+    </form>
+   </div>
+ </div>
+</div>
+</div>
+  
+
+</body>
+</html>

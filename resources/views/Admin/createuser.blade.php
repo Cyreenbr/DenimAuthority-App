@@ -45,14 +45,15 @@
                       <label for="email">Adresse email</label>
                       <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                     </div>
-                    <div class="form-group">
+                    <!--<div class="form-group">
                       <label for="password">Mot de passe</label>
                       <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                     </div>
                     <div class="form-group">
                       <label for="confirmpassword">Confirme mot de passe</label>
                       <input type="password" class="form-control" id="confirmpassword" name="password" placeholder="Password" required>
-                    </div>
+                    </div> -->
+
                     <div class="form-group">
                        <label>Services</label><br>
                           @foreach($services as $service)

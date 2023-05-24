@@ -47,10 +47,10 @@
                           </th>
                         <!--  <th>
                             Performance
-                          </th> -->
+                          </th> 
                           <th>
                             date de création
-                          </th>
+                          </th> -->
                           <th>
                             Action
                           </th>
@@ -77,10 +77,10 @@
                             <div class="progress">
                               <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                          </td> -->
+                          </td>
                           <td>
                             {{$data->created_at}}
-                          </td>
+                          </td> -->
                           <td>
                            @if ($data->user_type == 0)
                              <a href="{{url('/deleteuser',$data->id)}}">

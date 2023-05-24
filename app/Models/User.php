@@ -63,4 +63,20 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public static function create(array $attributes = [])
+    {
+        // Générer un mot de passe aléatoire
+        $password = Str::random(10);
+    
+        // Hasher le mot de passe avant de l'enregistrer dans la base de données
+        $attributes['password'] = Hash::make($password);
+    
+        // Appeler la méthode create() du modèle parent
+        $user = parent::create($attributes);
+    
+        // Vous pouvez maintenant utiliser le mot de passe généré pour envoyer une notification par e-mail, par exemple
+    
+        return $user;
+    }
 }
