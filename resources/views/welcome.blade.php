@@ -68,18 +68,18 @@
               </div>
             @endif
             @if (auth()->user()->services->contains('nom', 'Production')) 
-             <a href="{{url('ProductionDashboard')}}" class="nav-link" style="text-decoration: none; color: inherit;">      
                <div class="col-md-4 stretch-card grid-margin">
                 <div class="card bg-gradient-warning card-img-holder text-white">
+                 <a href="{{url('ProductionDashboard')}}" class="nav-link" style="text-decoration: none; color: inherit;">      
                   <div class="card-body">
                     <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3"><i class="mdi mdi-chart-pie mdi-24px float-right"></i>
                     </h4>
                     <h2 class="mb-5">Dashboard Production</h2> 
                   </div>
-                </div>
+               </a> 
               </div>
-             </a> 
+              </div>
             @endif  
         </div>
 

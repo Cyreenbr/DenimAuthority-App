@@ -8,6 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <title>DA Dashboard | Login</title>
+    <link rel="shortcut icon" href="/assets/images/DA-logo.png" />
 
 </head>
 <body >
