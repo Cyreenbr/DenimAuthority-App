@@ -70,21 +70,21 @@
             @if (auth()->user()->services->contains('nom', 'Production')) 
                <div class="col-md-4 stretch-card grid-margin">
                 <div class="card bg-gradient-warning card-img-holder text-white">
-                 <a href="{{url('ProductionDashboard')}}" class="nav-link" style="text-decoration: none; color: inherit;">      
                   <div class="card-body">
+                   <a href="{{url('ProductionDashboard')}}" class="nav-link" style="text-decoration: none; color: inherit;">      
                     <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-normal mb-3"><i class="mdi mdi-chart-pie mdi-24px float-right"></i>
                     </h4>
                     <h2 class="mb-5">Dashboard Production</h2> 
+                   </a>  
                   </div>
-               </a> 
               </div>
               </div>
             @endif  
         </div>
 
 <!-- partial:partials/_footer.html -->
-@include("footer")
+
         <!-- partial -->
     </div> 
       <!-- main-panel ends -->
@@ -92,7 +92,7 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-
+@include("footer")
 @include("script")
 
 </body>

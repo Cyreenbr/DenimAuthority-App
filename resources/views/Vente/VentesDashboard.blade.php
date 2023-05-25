@@ -50,8 +50,7 @@
    window.onload = function() {
        var SidebarButton = document.getElementById('navbar_button');
        SidebarButton.click();
-       var Parameterbutton = document.getElementById('');
-       Parameterbutton.click();
+
    };
 </script> 
 

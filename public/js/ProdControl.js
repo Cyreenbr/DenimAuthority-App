@@ -24,6 +24,8 @@ async function GetYear(year) {
     await updateDashboardDeuxiemeChoixURL(year_var);
 }
 
+
+
 async function GetJalon(jalon) {
     jalon_var = jalon ;
     await updateDashboardProdURL(year_var, jalon_var);

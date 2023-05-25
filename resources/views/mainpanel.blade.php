@@ -77,7 +77,7 @@
                       <a class="nav-link border-0" id="more-tab" data-bs-toggle="tab" href="#more" role="tab" aria-selected="false">More</a>
                     </li>
                    -->
-          @unless(Route::currentRouteName() == 'welcome')
+          @unless(request()->url() == 'http://127.0.0.1:8000/welcome')
             <div>
                     <div class="btn-wrapper">
                       <a href="#" class="btn btn-otline-dark align-items-center"><i class="icon-share"></i> Share</a>

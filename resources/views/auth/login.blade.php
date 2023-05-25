@@ -23,11 +23,10 @@
                  </div>
         @endif 
         <div id="div_log">
+                <x-jet-validation-errors class="mb-4" />
       
         <form method="POST" action="{{ route('login') }}">
             @csrf
-        
-
             <div class="top">
             <span style="font-family: serif;font-size:20px">Have an account?</span>
             <header>Login</header>
