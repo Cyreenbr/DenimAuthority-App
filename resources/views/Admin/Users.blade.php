@@ -3,7 +3,6 @@
 
 <head>
   @include("css")
-
 </head>
 <body>
   
@@ -57,44 +56,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                       @foreach ($data as $data)
-                        <tr>
-                          <td class="py-1">
-                            <img src="{{ $data->profile_photo_url }}" alt="image"/>
-                          </td>
-                          <td>
-                            {{$data->name}}
-                          </td>
-                          <td>
-                            {{$data->email}}
-                          </td>
-                           <td>
-                            @foreach ($data->services as $service)
-                              {{ $service->nom }} &nbsp;
-                            @endforeach
-                          </td>
-                         <!-- <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>
-                            {{$data->created_at}}
-                          </td> -->
-                          <td>
-                           @if ($data->user_type == 0)
-                             <a href="{{url('/deleteuser',$data->id)}}">
-                               <button type="button" class="btn btn-outline-danger btn-fw btn-sm">Supprimer</button>
-                             </a> 
-                              <a href="{{url('/updateuserView',$data->id)}}">
-                                 <button type="button" class="btn btn-outline-info btn-fw btn-sm">Modifier</button>
-                              </a>  
-                           @else
-                             Non autorisé
-                           @endif
-                          </td>
-                        </tr>
-                       @endforeach
+                        @include('Admin.users_partial', ['users' => $data])
                       </tbody>
                     </table>
                   </div>
@@ -126,6 +88,34 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+  function searchByService(serviceId) {
+  $.ajax({
+    url: '/searchByService/' + serviceId,
+    type: 'GET',
+    success: function(response) {
+      $('.table.table-striped tbody').html(response);
+      var selectedService = getServiceName(serviceId);
+      $('#messageDropdown').text(selectedService);
+    },
+    error: function(xhr) {
+    }
+  });
+  }
+
+  function getServiceName(serviceId) {
+  var serviceNames = {
+    '1': 'Service Achat',
+    '2': 'Service Vente',
+    '3': 'Service Stock',
+    '4': 'Service Production'
+  };
+
+  return serviceNames[serviceId] || 'Tous les services';
+  }
+</script>
 
 @include("script")
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

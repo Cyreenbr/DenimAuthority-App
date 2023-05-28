@@ -44,36 +44,32 @@
         <ul class="navbar-nav ms-auto">
          @if(Route::currentRouteName() == 'Users')
           <li class="nav-item dropdown d-none d-lg-block">
-            <a class="nav-link dropdown-bordered dropdown-toggle dropdown-toggle-split" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false"> Tout les services </a>
+              <a class="nav-link dropdown-bordered dropdown-toggle dropdown-toggle-split" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false"> Tous les services </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
-              <a class="dropdown-item py-3" >
-                <p class="mb-0 font-weight-medium float-left">Select category</p>
+              <a class="dropdown-item py-3" href="{{url('/users')}}">
+                <p class="mb-0 font-weight-medium float-left">Tous les services</p>
               </a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item preview-item">
+              <button class="dropdown-item preview-item" data-service-id="2" onclick="searchByService('2')" >
                 <div class="preview-item-content flex-grow py-2">
-                  <p class="preview-subject ellipsis font-weight-medium text-dark">Bootstrap Bundle </p>
-                  <p class="fw-light small-text mb-0">This is a Bundle featuring 16 unique dashboards</p>
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Service Vente</p>
                 </div>
-              </a>
-              <a class="dropdown-item preview-item">
+              </button>
+              <button class="dropdown-item preview-item" data-service-id="1" onclick="searchByService('1')">
                 <div class="preview-item-content flex-grow py-2">
-                  <p class="preview-subject ellipsis font-weight-medium text-dark">Angular Bundle</p>
-                  <p class="fw-light small-text mb-0">Everything you’ll ever need for your Angular projects</p>
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Service Achat</p>
                 </div>
-              </a>
-              <a class="dropdown-item preview-item">
+              </button>
+              <button class="dropdown-item preview-item" data-service-ide="3" onclick="searchByService('3')" >
                 <div class="preview-item-content flex-grow py-2">
-                  <p class="preview-subject ellipsis font-weight-medium text-dark">VUE Bundle</p>
-                  <p class="fw-light small-text mb-0">Bundle of 6 Premium Vue Admin Dashboard</p>
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Service Stock</p>
                 </div>
-              </a>
-              <a class="dropdown-item preview-item">
+              </button>
+              <button class="dropdown-item preview-item" data-service-id="4" onclick="searchByService('4')" >
                 <div class="preview-item-content flex-grow py-2">
-                  <p class="preview-subject ellipsis font-weight-medium text-dark">React Bundle</p>
-                  <p class="fw-light small-text mb-0">Bundle of 8 Premium React Admin Dashboard</p>
+                  <p class="preview-subject ellipsis font-weight-medium text-dark">Service Production</p>
                 </div>
-              </a>
+              </button>
             </div>
           </li>
          @endif 
@@ -107,9 +103,6 @@
                 <p class="fw-light text-muted mb-0">{{ Auth::user()->email }}</p>
               </div>
               <a href="{{ route('profile.show', ['id' => Auth::user()->id]) }}" class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Mon Profile <span class="badge badge-pill badge-danger">1</span></a>
-              <!--<a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i> Messages</a>
-              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"></i> Activity</a>
-              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i> FAQ</a>-->
               <a href="{{ route('logout') }}" class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Déconnexion</a>
             </div>
           </li>
@@ -119,3 +112,7 @@
         </button>
       </div>
     </nav>
+
+
+
+ 

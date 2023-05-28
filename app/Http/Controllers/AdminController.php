@@ -78,8 +78,17 @@ class AdminController extends Controller
 
         $data = user::where('name', 'like', '%' . $search . '%')->get();
 
-         return view('Admin.users',compact('data'));
+        return view('Admin.users',compact('data'));
     }
+
+    public function getUsersByService($serviceId)
+    {
+        $service = Service::findOrFail($serviceId);
+        $users = $service->users;
+
+        return view('Admin.users_partial', compact('users'));
+    }
+
 
 
 }
