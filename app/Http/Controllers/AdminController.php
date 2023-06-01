@@ -8,6 +8,7 @@ use App\Models\Service;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
+
 class AdminController extends Controller
 {
     public function users()
@@ -21,26 +22,31 @@ class AdminController extends Controller
         $services = Service::all();
         return view('Admin.createuser', ['services' => $services]);
     } 
-    
+
     public function userstore(Request $request)
     {
-        $user = new User;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        if ($request->has('user_type')) {
-            $user->user_type = '1';
-        } else {
-            $user->user_type = '0';
-        }
-    
-        $password = Str::random(10);
-    
-        $user->password = Hash::make($password);
-        $user->save();
-    
-        $user->services()->attach($request->services);
-        
-        return redirect()->route('Users')->with('success', $user->name . ' Créé avec succès . Mot de passe : ' . $password);
+    $validatedData = $request->validate([
+        'name' => 'required',
+        'email' => 'required|email|unique:users',
+        'services' => 'required|array',
+        'services.*' => 'exists:services,id',
+        'user_type' => 'boolean',
+    ]);
+
+    $password = Str::random(10);
+
+    $user = User::firstOrCreate(
+        ['email' => $validatedData['email']],
+        [
+            'name' => $validatedData['name'],
+            'password' => Hash::make($password),
+            'user_type' => $validatedData['user_type'] ?? 0,
+        ]
+    );
+
+    $user->services()->sync($validatedData['services']);
+
+    return redirect()->route('Users')->with('success', $user->name . ' créé avec succès. Mot de passe : ' . $password);
     }
 
     

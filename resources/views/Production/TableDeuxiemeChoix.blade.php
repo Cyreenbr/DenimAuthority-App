@@ -19,6 +19,7 @@
       <!--main-panel -->
       @include("mainpanel")
       <!--main-panelEnd -->
+                  <iframe  name="report" src="http://desktop-5r4su46:85/ReportServer2023/Pages/ReportViewer.aspx?%2fRapportsDenimAuthority%2ftable2choix&rs:Command=Render&rs:embed=true&rc:Toolbar=true&rc:PrintButton=false&rc:ExportExcel=false&rc:ExportCsv=false" width="1500" height="1500" frameborder="0"  toolbar="false"></iframe>                  </div>
 
       <div class="row" height="200">
         <div class="col-lg-11 d-flex flex-column">
@@ -29,7 +30,6 @@
                   <div class="d-sm-flex justify-content-between align-items-start"></div>
 
                   <div class="mt-3">
-                  <iframe  name="report" src="http://desktop-5r4su46:85/ReportServer2023/Pages/ReportViewer.aspx?%2fRapportsDenimAuthority%2fTableVente&rs:Command=Render&rs:embed=true&rc:Toolbar=true&rc:PrintButton=false&rc:ExportExcel=false&rc:ExportCsv=false" width="885" height="1200" frameborder="0"  toolbar="false"></iframe>                  </div>
                 </div>
               </div>
             </div>
@@ -44,7 +44,11 @@
     </div>
     <!-- container-scroller -->
 
-    <!--Onload-->
+@include("script")
+<!-- ReportScript-->
+<script src="/js/serviceAchat.js"></script>
+
+<!--Onload-->
 <script>
    window.onload = function() {
        var SidebarButton = document.getElementById('navbar_button');
@@ -53,12 +57,7 @@
    };
 </script> 
 
-    @include("script")
-    <!-- ReportScript-->
-    <script src="/js/serviceAchat.js"></script>
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   
     
     <!---->

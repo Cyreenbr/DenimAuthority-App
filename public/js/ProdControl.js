@@ -13,7 +13,7 @@ async function updateDashboardProdURL(year, jalon) {
 }
 
 async function updateDashboardDeuxiemeChoixURL(year) {
-    var rapportDeuxiemeChoixURL = baseReportURL + "?%2fRapportsDenimAuthority%2fProductionService+(1)&rs:Command=Render&rs:embed=true&rc:Toolbar=false";
+    var rapportDeuxiemeChoixURL = baseReportURL + "?%2fRapportsDenimAuthority%2fServiceProdDeuxiemeChoix&rs:Command=Render&rs:embed=true&rc:Toolbar=false";
     rapportDeuxiemeChoixURL += "&year=" + year;
     document.getElementById("DashboardDeuxiemeChoix").src = rapportDeuxiemeChoixURL;
 }

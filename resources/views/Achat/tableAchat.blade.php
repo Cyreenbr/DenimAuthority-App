@@ -29,7 +29,7 @@
                   <div class="d-sm-flex justify-content-between align-items-start"></div>
 
                   <div class="mt-3">
-                  <iframe  name="report" src="http://desktop-46kokp9/ReportServer1/Pages/ReportViewer.aspx?%2fReporting%2fta_detail_four&rs:Command=Render&rs:embed=true&rc:Toolbar=true&rc:PrintButton=false&rc:ExportExcel=false&rc:ExportCsv=false" width="885" height="1500" frameborder="0"  toolbar="false"></iframe>                  </div>
+                  <iframe  name="report" src="http://desktop-5r4su46:85/ReportServer2023/Pages/ReportViewer.aspx?%2fRapportsDenimAuthority%2fTableAchat&rs:Command=Render&rs:embed=true&rc:Toolbar=true&rc:PrintButton=false&rc:ExportExcel=false&rc:ExportCsv=false" width="885" height="1500" frameborder="0"  toolbar="false"></iframe>                  </div>
                 </div>
               </div>
             </div>
@@ -43,6 +43,15 @@
       <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
+
+    <!--Onload-->
+<script>
+   window.onload = function() {
+       var SidebarButton = document.getElementById('navbar_button');
+       SidebarButton.click();
+
+   };
+</script> 
 
     @include("script")
     <!-- ReportScript-->

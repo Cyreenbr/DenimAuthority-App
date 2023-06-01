@@ -31,7 +31,7 @@
 <!--main-panelEnd -->
 
 <div id="my-div">
- <iframe id="Dashboard" src="" height="2000px" width="100%" ></iframe>
+ <iframe id="Dashboard" src="" height="2100px" width="100%" ></iframe>
 </div>
           
         <!-- content-wrapper ends -->

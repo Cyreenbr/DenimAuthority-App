@@ -51,6 +51,8 @@ Route::get('/StockDashboard', [App\Http\Controllers\HomeController::class, 'Stoc
 //Production route 
 Route::get('/ProductionDashboard', [App\Http\Controllers\HomeController::class, 'ProductionDashboard']);
 Route::get('/DeuxiemeChoixDashboard', [App\Http\Controllers\HomeController::class, 'DeuxiemeChoixDashboard']);
+Route::get('/table_détails_production', [App\Http\Controllers\HomeController::class, 'tableProd']);
+Route::get('/table_détails_deuxiéme_choix', [App\Http\Controllers\HomeController::class, 'tableDeuxiemeChoix']);
 
 
 Route::middleware([

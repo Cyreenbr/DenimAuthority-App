@@ -7,16 +7,16 @@
                    @if(url()->current() === "http://127.0.0.1:8000/VentesDashboard" || url()->current() === "http://127.0.0.1:8000/AchatsDashboard")
                     <ul class="nav nav-tabs" role="tablist">
                       <li class="nav-item">                  
-                          <button type="button" class="btn btn-inverse-primary btn-lg btn-fw" onclick="afficherRapport('2017')">2017</button>
+                          <button type="button" class="btn btn-inverse-primary btn-lg btn-fw" onclick="afficherRapport('2020')">2020</button>
                       </li>
                       <li class="nav-item">    
-                          <button type="button" class="btn btn-inverse-primary btn-lg btn-fw " onclick="afficherRapport('2018')">2018</button>
+                          <button type="button" class="btn btn-inverse-primary btn-lg btn-fw " onclick="afficherRapport('2021')">2021</button>
                       </li>
                       <li class="nav-item">    
-                          <button type="button" class="btn btn-inverse-primary btn-lg btn-fw" onclick="afficherRapport('2019')">2019</button>
+                          <button type="button" class="btn btn-inverse-primary btn-lg btn-fw" onclick="afficherRapport('2022')">2022</button>
                       </li>
                       <li class="nav-item">    
-                          <button type="button" class="btn btn-inverse-primary btn-lg btn-fw" onclick="afficherRapport('2020')">2020</button> 
+                          <button type="button" class="btn btn-inverse-primary btn-lg btn-fw" onclick="afficherRapport('2023')">2023</button> 
                       </li>  
                     </ul>  
                    @endif  

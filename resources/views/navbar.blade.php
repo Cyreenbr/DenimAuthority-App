@@ -32,14 +32,29 @@
                   @if(url()->current() === "http://127.0.0.1:8000/ProductionDashboard" )
                      <h1 class="welcome-text"> Tableau de bord <span class="text-black fw-bold">Production</span></h1>
                   @else   
-                    <h1 class="welcome-text">Bonjour, <span class="text-black fw-bold">{{ Auth::user()->name }}</span></h1>
-                    <h3 class="welcome-sub-text">Vous trouvez tous vos Dashbaords içi</h3> 
+                     @if(url()->current() === "http://127.0.0.1:8000/table_d%C3%A9tails_production" )
+                       <h1 class="welcome-text"> Table <span class="text-black fw-bold">Production</span></h1>
+                     @else  
+                        @if(url()->current() === "http://127.0.0.1:8000/table_d%C3%A9tails_deuxi%C3%A9me_choix" )
+                          <h1 class="welcome-text"> Table <span class="text-black fw-bold">Deuxiéme Choix</span></h1>
+                        @else 
+                          @if(url()->current() === "http://127.0.0.1:8000/table_d%C3%A9tails_achat" )
+                            <h1 class="welcome-text"> Table <span class="text-black fw-bold">Achat</span></h1>
+                          @else   
+                             @if(url()->current() === "http://127.0.0.1:8000/table_d%C3%A9tails_vente" )
+                              <h1 class="welcome-text"> Table <span class="text-black fw-bold">Vente</span></h1>
+                             @else   
+                               <h1 class="welcome-text">Bonjour, <span class="text-black fw-bold">{{ Auth::user()->name }}</span></h1>
+                               <h3 class="welcome-sub-text">Vous trouvez tous vos Dashbaords içi</h3> 
              @endif
                 @endif
                   @endif
                      @endif
-
-          </li>
+                       @endif
+                          @endif
+                            @endif
+                              @endif
+                                </li>
         </ul>
         <ul class="navbar-nav ms-auto">
          @if(Route::currentRouteName() == 'Users')

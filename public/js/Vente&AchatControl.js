@@ -25,6 +25,6 @@ function afficherRapport(year) {
     document.getElementById("Dashboard").src = rapportURL;
 }
 
-afficherRapport('2019');
+afficherRapport('2022');
 
       

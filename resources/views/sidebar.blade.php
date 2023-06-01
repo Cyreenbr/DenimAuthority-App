@@ -66,6 +66,10 @@
                @endif   
                @if (auth()->user()->services->contains('nom', 'Vente'))                  
                 <li class="nav-item"> <a class="nav-link" href="{{url('table_détails_vente')}}">Table de vente</a></li>
+               @endif  
+               @if (auth()->user()->services->contains('nom', 'Production'))                  
+                <li class="nav-item"> <a class="nav-link" href="{{url('table_détails_production')}}">Table de production</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('table_détails_deuxiéme_choix')}}">Table de deuxiéme choix</a></li>
                @endif   
               </ul>
             </div>

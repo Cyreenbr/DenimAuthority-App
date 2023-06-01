@@ -68,5 +68,13 @@ class HomeController extends Controller
            return view('Production.DeuxiemeChoixDashboard');
     }
 
+    public function tableProd(){
+        return view('Production.TableProduction');
+    }
+
+    public function tableDeuxiemeChoix(){
+        return view('Production.TableDeuxiemeChoix');
+    }
+
 
 }

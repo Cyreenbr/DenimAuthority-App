@@ -23,7 +23,6 @@
                  </div>
         @endif 
         <div id="div_log">
-                <x-jet-validation-errors class="mb-4" />
       
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -32,6 +31,7 @@
             <header>Login</header>
             </div>
 
+                <x-jet-validation-errors class="mb-4" />
 
             <div class="input-field">
             <input   name="email" type="email" class="input block mt-1 w-full" 
