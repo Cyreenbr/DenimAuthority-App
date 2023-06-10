@@ -45,15 +45,6 @@
                       <label for="email">Adresse email</label>
                       <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                     </div>
-                    <!--<div class="form-group">
-                      <label for="password">Mot de passe</label>
-                      <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="confirmpassword">Confirme mot de passe</label>
-                      <input type="password" class="form-control" id="confirmpassword" name="password" placeholder="Password" required>
-                    </div> -->
-
                     <div class="form-group">
                        <label>Services</label><br>
                           @foreach($services as $service)
@@ -65,14 +56,7 @@
                              </div>
                            @endforeach
                     </div>
-                    <blockquote class="blockquote" style="color:blue">
-                       <div class="form-check">
-                         <label class="form-check-label">
-                            <input class="checkbox" type="checkbox" name="user_type" id="admin-checkbox" value="1">
-                              Admin
-                         </label>
-                       </div>
-                    </blockquote>
+                   
                     <button type="submit" class="btn btn-primary me-2">Submit</button>
                   </form>
                 </div>

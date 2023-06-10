@@ -32,7 +32,6 @@ class AdminController extends Controller
         'email' => 'required|email|unique:users',
         'services' => 'required|array',
         'services.*' => 'exists:services,id',
-        'user_type' => 'boolean',
       ]);
 
       $password = Str::random(10);
@@ -42,7 +41,6 @@ class AdminController extends Controller
         [
             'name' => $validatedData['name'],
             'password' => Hash::make($password),
-            'user_type' => $validatedData['user_type'] ?? 0,
         ]
        );
 

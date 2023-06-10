@@ -20,6 +20,22 @@
                       </li>  
                     </ul>  
                    @endif  
+                   @if(url()->current() === "http://127.0.0.1:8000/table_d%C3%A9tails_achat" || url()->current() === "http://127.0.0.1:8000/table_d%C3%A9tails_vente" ||  url()->current() === "http://127.0.0.1:8000/table_d%C3%A9tails_production"  ||  url()->current() === "http://127.0.0.1:8000/table_d%C3%A9tails_deuxi%C3%A9me_choix" )
+                    <ul class="nav nav-tabs" role="tablist">
+                      <li class="nav-item">                  
+                          <button type="button" class="btn btn-inverse-primary btn-lg btn-fw" onclick="afficherRapport('2020')">2020</button>
+                      </li>
+                      <li class="nav-item">    
+                          <button type="button" class="btn btn-inverse-primary btn-lg btn-fw " onclick="afficherRapport('2021')">2021</button>
+                      </li>
+                      <li class="nav-item">    
+                          <button type="button" class="btn btn-inverse-primary btn-lg btn-fw" onclick="afficherRapport('2022')">2022</button>
+                      </li>
+                      <li class="nav-item">    
+                          <button type="button" class="btn btn-inverse-primary btn-lg btn-fw" onclick="afficherRapport('2023')">2023</button> 
+                      </li>  
+                    </ul>  
+                   @endif 
                    @if(url()->current() === "http://127.0.0.1:8000/ProductionDashboard" )
                     <ul class="nav nav-tabs" role="tablist">
                       <li class="nav-item">                  
@@ -80,7 +96,6 @@
           @unless(request()->url() == 'http://127.0.0.1:8000/welcome')
             <div>
                     <div class="btn-wrapper">
-                      <a href="#" class="btn btn-otline-dark align-items-center"><i class="icon-share"></i> Share</a>
                       <a href="#" class="btn btn-otline-dark" id="print-button"><i class="icon-printer"></i> Print</a>
                       <a href="#" class="btn btn-primary text-white me-0"><i class="icon-download"></i> Export</a>
                     </div>
