@@ -23,6 +23,10 @@ function afficherRapport(year) {
     }
 
     document.getElementById("Dashboard").src = rapportURL;
+
+    document.getElementById("valeur-selectionnee").innerHTML = year;
+    $("#lien-export-pdf").attr("href", rapportURL+"&rs:Format=PDF");
+
 }
 
 afficherRapport('2022');

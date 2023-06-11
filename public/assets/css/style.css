@@ -11,7 +11,7 @@ html, body {
     height: 100%;
 }
 body{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(44, 11, 230, 0.603)), url('logInBack.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(44, 11, 230, 0.603)), url('inlogInBack.jpg');
     background-color: rgba(0, 0, 0, 0.1);
     background-repeat: no-repeat;
         background-size: cover;
@@ -32,7 +32,7 @@ body{
 
 }
 .image-container {
-    background-image: url('logInBack.jpg');
+    background-image: url('dash.png');
   }
   
 
@@ -76,6 +76,11 @@ header{
         outline: none;
 text-align:center;
 }
+
+    .text-red-600 {
+        color: red;
+    }
+
 i{
     position: relative;
     top: -33px;
@@ -121,3 +126,5 @@ label a{
     text-decoration: none;
     color: #fff;
 }
+
+

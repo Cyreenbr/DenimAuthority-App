@@ -29,7 +29,7 @@ class AdminController extends Controller
     {
       $validatedData = $request->validate([
         'name' => 'required',
-        'email' => 'required|email|unique:users',
+        'email' => 'required|email|unique:users|ends_with:@denimauthority.com',
         'services' => 'required|array',
         'services.*' => 'exists:services,id',
       ]);

@@ -31,6 +31,8 @@ function afficherRapport(year) {
     }
 
     document.getElementById("Table").src = rapportURL;
+    document.getElementById("valeur-selectionnee-table").innerHTML = year;
+
 }
 
 afficherRapport('2022');

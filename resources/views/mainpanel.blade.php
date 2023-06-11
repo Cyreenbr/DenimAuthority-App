@@ -38,9 +38,6 @@
                    @endif 
                    @if(url()->current() === "http://127.0.0.1:8000/ProductionDashboard" )
                     <ul class="nav nav-tabs" role="tablist">
-                      <li class="nav-item">                  
-                          <button type="button" name="year" value="2020" class="btn btn-inverse-primary btn-lg btn-fw" onclick="GetYear('2020')">2020</button>
-                      </li>
                       <li class="nav-item">    
                           <button type="button" name="year" value="2021" class="btn btn-inverse-primary btn-lg btn-fw " onclick="GetYear('2021')">2021</button>
                       </li>
@@ -79,25 +76,23 @@
                       </li>         
                     </ul>
                    @endif 
-                    <!--
-                    <li class="nav-item">
-                      <a class="nav-link active ps-0" id="home-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Ce mois</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#audiences" role="tab" aria-selected="false">Vue d'ensemble</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#demographics" role="tab" aria-selected="false">Demographics</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link border-0" id="more-tab" data-bs-toggle="tab" href="#more" role="tab" aria-selected="false">More</a>
-                    </li>
-                   -->
-          @unless(request()->url() == 'http://127.0.0.1:8000/welcome')
+                
+          @unless(request()->url() == 'http://127.0.0.1:8000/welcome' || request()->url() == 'http://127.0.0.1:8000' || request()->url() == 'http://127.0.0.1:8000/table_d%C3%A9tails_achat' || request()->url() == 'http://127.0.0.1:8000/table_d%C3%A9tails_vente' || request()->url() == 'http://127.0.0.1:8000/table_d%C3%A9tails_production' || request()->url() == 'http://127.0.0.1:8000/table_d%C3%A9tails_deuxi%C3%A9me_choix')
             <div>
                     <div class="btn-wrapper">
                       <a href="#" class="btn btn-otline-dark" id="print-button"><i class="icon-printer"></i> Print</a>
-                      <a href="#" class="btn btn-primary text-white me-0"><i class="icon-download"></i> Export</a>
+                      @if(url()->current() === "http://127.0.0.1:8000/StockDashboard" ) 
+                       <a href="" class="btn btn-primary text-white me-0" id="lien-stock-export-pdf"><i class="icon-download"></i> Export</a>
+                      @endif
+                      @if(url()->current() === "http://127.0.0.1:8000/AchatsDashboard" ) 
+                       <a href="" class="btn btn-primary text-white me-0" id="lien-export-pdf"><i class="icon-download"></i> Export</a>
+                      @endif 
+                      @if(url()->current() === "http://127.0.0.1:8000/VentesDashboard" ) 
+                       <a href="" class="btn btn-primary text-white me-0" id="lien-export-pdf"><i class="icon-download"></i> Export</a>
+                      @endif 
+                      @if(url()->current() === "http://127.0.0.1:8000/ProductionDashboard" ) 
+                       <a href="" class="btn btn-primary text-white me-0" id="lien-prod-export-pdf"><i class="icon-download"></i> Export </a>
+                      @endif       
                     </div>
             </div>
           @endunless

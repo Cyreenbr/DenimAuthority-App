@@ -26,6 +26,12 @@
 <div id="my-div">
 
  <iframe src="" id="DashboardProd" height="500px" width="100%" ></iframe>
+
+ <div style="text-align: right;">
+ <a href="" class="btn btn-primary text-white me-0" id="lien-2prod-export-pdf" style="float: right;"><i class="icon-download"></i> Export </a>
+ <a href="#" class="btn btn-otline-dark" id="print-button"><i class="icon-printer"></i> Print</a>
+ </div>
+
  <iframe src="" id="DashboardDeuxiemeChoix" height="2000px" width="100%" ></iframe>
 
 </div>                                          
